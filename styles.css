@@ -82,6 +82,13 @@ nav a:hover{color:var(--green)}
 .addons h3{margin-bottom:.3rem}
 .addons ul{margin-top:0}
 
+.vendors{padding-top:0}
+.vendor-card{display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;align-items:start;background:var(--bg-alt);border:1px solid var(--line);border-left:6px solid var(--green);border-radius:var(--radius);padding:2rem 2.2rem}
+.vendor-head h2{margin-bottom:.4rem}
+.vendor-head .eyebrow{margin-bottom:.4rem}
+.price-line{font-size:1.15rem;font-weight:600;color:var(--green);margin:0}
+.vendor-body p{margin-bottom:.8rem}
+.vendor-body .btn{margin-top:.6rem}
 .offer{background:var(--charcoal);color:#fff}
 .offer h2{color:#fff}
 .offer-list{list-style:none;padding:0;margin:0;display:grid;gap:.9rem}
@@ -111,7 +118,8 @@ nav a:hover{color:var(--green)}
   .hero-inner,.two-col{grid-template-columns:1fr}
   .hero-logo{order:-1}
   .hero-logo img{width:164px}
-  .grid-3,.steps{grid-template-columns:1fr}
+  .grid-3,.steps,.vendor-card{grid-template-columns:1fr}
+  .vendor-card{gap:1rem;padding:1.5rem}
   nav{display:none}
 }
 @media (max-width:600px){
