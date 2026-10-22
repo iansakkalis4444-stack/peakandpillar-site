@@ -10,16 +10,16 @@
   --radius:12px;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:1.0625rem}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--green)}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
-h1,h2,h3{color:var(--charcoal);line-height:1.2;margin:0 0 .6em}
+h1,h2,h3{color:var(--charcoal);line-height:1.2;margin:0 0 .6em;text-wrap:balance}
 h1{font-size:clamp(2rem,4.2vw,3rem);font-weight:700;letter-spacing:-.01em}
-h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700}
-h3{font-size:1.15rem;font-weight:600}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;letter-spacing:-.005em;margin-bottom:.75em}
+h3{font-size:1.15rem;font-weight:600;margin-bottom:.45em}
 p{margin:0 0 1em}
 address{font-style:normal}
 .wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
@@ -40,12 +40,19 @@ nav a:hover{color:var(--green)}
 
 /* hero */
 .hero{padding:4.5rem 0 4rem;background:linear-gradient(180deg,#fff 0%,var(--bg-alt) 100%)}
-.hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+.hero-inner{display:grid;grid-template-columns:1.25fr 1fr;gap:3.5rem;align-items:center}
 .eyebrow{color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
-.lead{font-size:1.15rem;color:var(--muted);max-width:38em}
-.hero-logo img{width:min(290px,100%);margin:0 auto}
+.lead{font-size:1.15rem;color:var(--muted);max-width:36em;line-height:1.65}
+.hero-media{position:relative;margin:0}
+.photo{width:100%;height:auto;border-radius:var(--radius);box-shadow:0 14px 34px -18px rgba(31,36,40,.45);background:var(--bg-alt)}
+.hero-media .photo{aspect-ratio:16/9;object-fit:cover}
+.hero-badge img{position:absolute;left:-18px;bottom:-22px;width:92px;height:auto;padding:12px;background:#fff;border-radius:16px;box-shadow:0 10px 24px -12px rgba(31,36,40,.4)}
+.photo-frame{margin:0}
+.photo-frame .photo{aspect-ratio:4/3;object-fit:cover}
 .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.6rem 0 1.2rem}
-.btn{display:inline-block;padding:.85rem 1.35rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:background .15s,color .15s}
+.btn{display:inline-block;padding:.85rem 1.35rem;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:background .15s,color .15s,transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(31,36,40,.5)}
+.btn:active{transform:none}
 .btn-primary{background:var(--green);color:#fff}
 .btn-primary:hover{background:var(--green-dark)}
 .btn-secondary{border-color:var(--charcoal);color:var(--charcoal);background:#fff}
@@ -61,11 +68,12 @@ nav a:hover{color:var(--green)}
 .section-intro{color:var(--muted);margin-top:-.4rem}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;border-top:4px solid var(--green)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;border-top:4px solid var(--green);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover,.steps li:hover{transform:translateY(-4px);box-shadow:0 16px 32px -20px rgba(31,36,40,.45)}
 .card p:last-child{margin-bottom:0}
 
 .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.steps li{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.steps li{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;transition:transform .25s ease,box-shadow .25s ease}
 .num{flex:none;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:700}
 .steps p{margin:0}
 
@@ -95,13 +103,17 @@ nav a:hover{color:var(--green)}
 .offer-list li{background:rgba(255,255,255,.08);border-left:4px solid #6FB592;padding:1rem 1.2rem;border-radius:8px}
 
 .two-col{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;align-items:start}
+.scope-side{display:grid;gap:1.4rem}
 .disclaimer{background:var(--bg-alt);border:1px solid var(--line);border-left:4px solid var(--charcoal);border-radius:var(--radius);padding:1.5rem}
 .disclaimer h2{font-size:1.3rem}
 .disclaimer p{font-size:.95rem;margin:0}
+.disclaimer p+p{margin-top:.75em}
 
 .pills{list-style:none;padding:0;margin:0 0 1.2rem;display:flex;flex-wrap:wrap;gap:.7rem}
 .pills li{background:var(--green);color:#fff;padding:.55rem 1.2rem;border-radius:999px;font-weight:600}
 
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:2.5rem;align-items:center}
+.about-grid p:last-child{margin-bottom:0}
 .contact{background:var(--green);color:#fff}
 .contact h2{color:#fff}
 .contact-name{margin:1rem 0 .2rem;opacity:.95}
@@ -114,17 +126,31 @@ nav a:hover{color:var(--green)}
 .site-footer p,.site-footer address{margin:.3rem 0}
 .site-footer .small{color:#AEB6BC}
 
+/* scroll reveal: only hides content once JS has added .js to <html> */
+.js .reveal>.wrap{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in>.wrap{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .reveal>.wrap{opacity:1;transform:none}
+  .card:hover,.steps li:hover,.btn:hover{transform:none}
+}
+
 @media (max-width:900px){
-  .hero-inner,.two-col{grid-template-columns:1fr}
-  .hero-logo{order:-1}
-  .hero-logo img{width:164px}
+  .hero-inner,.two-col,.about-grid{grid-template-columns:1fr}
+  .hero-inner{gap:2.5rem}
+  .hero-badge img{width:72px;padding:9px;left:12px;bottom:-18px}
   .grid-3,.steps,.vendor-card{grid-template-columns:1fr}
   .vendor-card{gap:1rem;padding:1.5rem}
   nav{display:none}
 }
 @media (max-width:600px){
   .grid-2{grid-template-columns:1fr}
-  .hero{padding:2.5rem 0 3rem}
   .section{padding:3rem 0}
   .btn{width:100%;text-align:center}
+  .hero{padding:2.25rem 0 3.25rem}
+  h1{font-size:1.85rem}
+  .lead{font-size:1.05rem}
+  .card,.steps li{padding:1.3rem}
+  .vendor-card{padding:1.3rem;border-left-width:5px}
+  .addons{padding:1.1rem 1.2rem}
 }

@@ -2,6 +2,7 @@
 <html lang="en-CA">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Peak &amp; Pillar | Facility Consulting in Oakville, Burlington, Mississauga &amp; Etobicoke</title>
 <meta name="description" content="Peak &amp; Pillar offers simple on-site facility inspections with a photo report of findings, safety tips and improvements for small property managers and small business owners across the Greater Toronto Area.">
@@ -99,16 +100,17 @@
         </div>
         <p class="small">Founding-client offer: Essentials Walk-Through for <strong>$195</strong> for the first 5 clients. <a href="#offer">See details</a>.</p>
       </div>
-      <div class="hero-logo">
-        <picture>
-          <source srcset="assets/mark-400.webp 361w, assets/mark-640.webp 577w" sizes="(max-width: 900px) 164px, 290px" type="image/webp">
-          <img src="assets/mark-400.png" width="361" height="400" alt="Peak &amp; Pillar logo: a pillar beneath a peaked roof">
+      <figure class="hero-media">
+        <img class="photo" src="assets/photo-plaza.webp" width="960" height="540" fetchpriority="high" decoding="async" alt="Single-storey commercial plaza with large windows, landscaped walkway and an empty parking lot at dusk">
+        <picture class="hero-badge">
+          <source srcset="assets/mark-400.webp" type="image/webp">
+          <img src="assets/mark-400.png" width="361" height="400" decoding="async" alt="Peak &amp; Pillar logo: a pillar beneath a peaked roof">
         </picture>
-      </div>
+      </figure>
     </div>
   </section>
 
-  <section id="services" class="section">
+  <section id="services" class="section reveal">
     <div class="wrap">
       <h2>What you get</h2>
       <div class="grid-3">
@@ -128,7 +130,7 @@
     </div>
   </section>
 
-  <section id="how" class="section alt">
+  <section id="how" class="section reveal alt">
     <div class="wrap">
       <h2>How it works</h2>
       <ol class="steps">
@@ -139,7 +141,7 @@
     </div>
   </section>
 
-  <section id="packages" class="section">
+  <section id="packages" class="section reveal">
     <div class="wrap">
       <h2>Packages</h2>
       <p class="section-intro">All prices in CAD, plus HST.</p>
@@ -193,7 +195,7 @@
     </div>
   </section>
 
-  <section id="vendors" class="section vendors" aria-labelledby="vendors-h">
+  <section id="vendors" class="section reveal vendors" aria-labelledby="vendors-h">
     <div class="wrap">
       <div class="vendor-card">
         <div class="vendor-head">
@@ -210,7 +212,7 @@
     </div>
   </section>
 
-  <section id="offer" class="section offer">
+  <section id="offer" class="section reveal offer">
     <div class="wrap">
       <h2>Launch offers</h2>
       <ul class="offer-list">
@@ -221,7 +223,7 @@
     </div>
   </section>
 
-  <section id="scope" class="section">
+  <section id="scope" class="section reveal">
     <div class="wrap two-col">
       <div>
         <h2>What the walk-through covers</h2>
@@ -240,15 +242,20 @@
           <li>Ranked maintenance priorities (no repair cost estimates)</li>
         </ul>
       </div>
+      <div class="scope-side">
+      <figure class="photo-frame">
+        <img class="photo" src="assets/photo-rooftop.webp" width="800" height="600" loading="lazy" decoding="async" alt="Inspection clipboard, flashlight and tablet on a flat commercial roof beside rooftop HVAC units">
+      </figure>
       <aside class="disclaimer" aria-labelledby="disc-h">
         <h2 id="disc-h">Please note</h2>
         <p>Every inspection is a visual, non-invasive walk-through of accessible areas. It is <strong>not</strong> a structural or building-systems assessment by a licensed professional, an ASTM E2018 property condition assessment, a code or fire inspection, a designated substance survey, an environmental assessment or an AODA audit. No compliance certification and no repair cost estimates are provided. Liability is limited to the fee paid.</p>
         <p>Contractors are hired and paid directly by the client. Quotes come from the contractors, and Peak &amp; Pillar isn't responsible for their workmanship.</p>
       </aside>
+      </div>
     </div>
   </section>
 
-  <section id="who" class="section alt">
+  <section id="who" class="section reveal alt">
     <div class="wrap">
       <h2>Who it&rsquo;s for</h2>
       <div class="grid-2">
@@ -264,7 +271,7 @@
     </div>
   </section>
 
-  <section id="area" class="section">
+  <section id="area" class="section reveal">
     <div class="wrap">
       <h2>Service area</h2>
       <p>Serving the Greater Toronto Area, with a focus on:</p>
@@ -278,15 +285,20 @@
     </div>
   </section>
 
-  <section id="about" class="section alt">
-    <div class="wrap narrow">
+  <section id="about" class="section reveal alt">
+    <div class="wrap about-grid">
+      <div>
       <h2>About</h2>
       <p>Peak &amp; Pillar is run by Ian Sakkalis, Facility Consultant. Ian brings over half a decade of hands-on facility experience, and it shapes every visit: a practical eye for what needs attention now, what can wait, and what to keep watching.</p>
       <p>When repairs are needed, Ian can bring in vendors and manage the work from quote to finish.</p>
+      </div>
+      <figure class="photo-frame">
+        <img class="photo" src="assets/photo-mechanical.webp" width="800" height="600" loading="lazy" decoding="async" alt="Tidy mechanical room with an air handling unit, insulated piping and a wall-mounted fire extinguisher">
+      </figure>
     </div>
   </section>
 
-  <section id="contact" class="section contact">
+  <section id="contact" class="section reveal contact">
     <div class="wrap narrow center">
       <h2>Book an inspection</h2>
       <p>Call or email to choose a package and set up a walk-through.</p>
@@ -309,5 +321,6 @@
     <p class="small">&copy; 2026 Peak &amp; Pillar. Prices in CAD, plus HST.</p>
   </div>
 </footer>
+<script>(function(){var e=document.querySelectorAll(".reveal");if(!("IntersectionObserver"in window)){e.forEach(function(n){n.classList.add("in")});return}var o=new IntersectionObserver(function(t){t.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.08});e.forEach(function(n){o.observe(n)})})()</script>
 </body>
 </html>
