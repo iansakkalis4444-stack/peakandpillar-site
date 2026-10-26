@@ -4,7 +4,7 @@ Plain HTML + CSS with a few lines of inline vanilla JavaScript (scroll fade-ins 
 
 ## Pages
 - `index.html`: home page (SEO, Open Graph and LocalBusiness JSON-LD in `<head>`)
-- `contact/index.html`: contact details and enquiry form (https://peakandpillar.ca/contact/)
+- `contact/index.html`: contact details and inquiry form (https://peakandpillar.ca/contact/)
 - `contact/thanks/index.html`: thank-you page shown after a form submission (noindex)
 
 ## Files
