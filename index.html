@@ -73,7 +73,13 @@
         <img src="assets/logo-horizontal.png" width="228" height="52" alt="Peak &amp; Pillar">
       </picture>
     </a>
-    <nav aria-label="Main">
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-box" aria-hidden="true">
+        <svg class="nav-icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="nav-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </span>
+    </button>
+    <nav id="main-nav" aria-label="Main">
       <ul>
         <li><a href="#services">Services</a></li>
         <li><a href="#how">How it works</a></li>
@@ -83,8 +89,8 @@
         <li><a href="supplies/">Supplies <span class="nav-new" aria-label="New">New</span></a></li>
         <li><a href="contact/">Contact</a></li>
       </ul>
+          <a class="btn btn-primary btn-sm header-cta" href="contact/">Get in touch</a>
     </nav>
-    <a class="btn btn-primary btn-sm header-cta" href="contact/">Get in touch</a>
   </div>
 </header>
 
@@ -390,5 +396,6 @@
   </div>
 </footer>
 <script>(function(){var e=document.querySelectorAll(".reveal");if(!("IntersectionObserver"in window)){e.forEach(function(n){n.classList.add("in")});return}var o=new IntersectionObserver(function(t){t.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}})},{rootMargin:"0px 0px -8% 0px",threshold:.08});e.forEach(function(n){o.observe(n)})})()</script>
+<script src="assets/nav.js" defer></script>
 </body>
 </html>
