@@ -6,6 +6,7 @@ Plain HTML + CSS with a few lines of inline vanilla JavaScript (scroll fade-ins 
 - `index.html`: home page (SEO, Open Graph and LocalBusiness JSON-LD in `<head>`)
 - `contact/index.html`: contact details and inquiry form (https://peakandpillar.ca/contact/)
 - `contact/thanks/index.html`: thank-you page shown after a form submission (noindex)
+- `supplies/index.html`: facility consumables catalog + quote / restock / item-request forms
 
 ## Files
 - `styles.css`: all styles (Poppins via Google Fonts; brand colours charcoal `#474F56`, dark green `#18543B`)
@@ -26,3 +27,8 @@ DNS at Porkbun: keep the email-forwarding MX/TXT records untouched.
 
 ## Editing
 Contact details are in the home page hero, contact section, footer, JSON-LD and the contact page (phone 647-885-9183, info@peakandpillar.ca, Oakville, Ontario; no street address).
+
+## Supplies catalog (v4)
+`supplies/index.html` is a live catalog of facility consumables (static HTML product cards — no JS required to display). Forms: `#supplies-quote` (quote / auto-restock) and `#request-item` (can't find it / source an item). Both post to FormSubmit at info@peakandpillar.ca and redirect to `/contact/thanks/`.
+To edit the catalog, update the `<li class="product-card">` items in the `#product-grid` list. Keep cost bases and markup figures off the public page.
+Delivery: FREE local delivery on orders $149.99+; $5.99 under that; local pickup available. Order by phone/SMS 647-885-9183, email info@peakandpillar.ca, or the quote form.
