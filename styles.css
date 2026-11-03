@@ -564,3 +564,15 @@ nav a{white-space:nowrap}
   .dispenser-card h2{font-size:1.3rem}
   .dispenser-price-lines{flex-direction:column;align-items:flex-start}
 }
+
+/* form delivery fallback when Web3Forms fails */
+.form-fallback{margin:0 0 1rem;padding:1rem 1.15rem;background:#FFF7F0;border:1px solid #E7C4A8;border-left:4px solid #B3412E;border-radius:12px;color:var(--charcoal)}
+.form-fallback p{margin:0 0 .85rem;font-size:.98rem;line-height:1.5}
+.form-fallback-actions{display:flex;flex-wrap:wrap;gap:.55rem .7rem}
+.form-fallback .btn{font-size:.92rem}
+.btn-outline{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.btn-outline:hover{background:var(--green-soft);color:var(--green-dark)}
+@media (max-width:600px){
+  .form-fallback-actions{flex-direction:column}
+  .form-fallback-actions .btn{justify-content:center}
+}

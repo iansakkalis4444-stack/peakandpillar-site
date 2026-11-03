@@ -87,16 +87,15 @@
       <div class="form-card">
         <h2 id="form-h">Send an inquiry</h2>
         <p class="small">Fields marked <span class="req" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
-        <form id="inquiry" class="form" action="https://formsubmit.co/info@peakandpillar.ca" method="POST" aria-labelledby="form-h">
-          <input type="hidden" name="_subject" value="New Peak &amp; Pillar website inquiry">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://peakandpillar.ca/contact/thanks/">
-          <input type="hidden" name="_url" value="https://peakandpillar.ca/contact/">
+        <form id="inquiry" class="form" action="https://api.web3forms.com/submit" method="POST" aria-labelledby="form-h">
+          <input type="hidden" name="access_key" value="">
+          <input type="hidden" name="subject" value="New Peak &amp; Pillar website inquiry">
+          <input type="hidden" name="from_name" value="Peak &amp; Pillar website">
+          <input type="hidden" name="redirect" value="https://peakandpillar.ca/contact/thanks/">
           <div class="hp" aria-hidden="true">
-            <label for="f-honey">Leave this field empty</label>
-            <input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off">
+            <label><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"> Leave unchecked</label>
           </div>
+
 
           <div class="field-row">
             <div class="field">
@@ -168,6 +167,6 @@
     <p class="small">&copy; 2026 Peak &amp; Pillar. Prices in CAD, plus HST.</p>
   </div>
 </footer>
-<script>(function(){var f=document.getElementById("inquiry");if(!f)return;var p=f.elements.phone,m=f.elements.email,g=document.getElementById("reach"),err=document.getElementById("reach-error"),b=f.querySelector("[type=submit]");function ok(){return p.value.trim()!==""||m.value.trim()!==""}function clear(){if(ok()){err.hidden=true;g.classList.remove("invalid");p.removeAttribute("aria-invalid");m.removeAttribute("aria-invalid")}}p.addEventListener("input",clear);m.addEventListener("input",clear);f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();err.hidden=false;g.classList.add("invalid");p.setAttribute("aria-invalid","true");m.setAttribute("aria-invalid","true");p.focus();return}b.disabled=true;b.textContent="Sending\u2026"})})()</script>
+<script src="../assets/forms.js" defer></script>
 </body>
 </html>

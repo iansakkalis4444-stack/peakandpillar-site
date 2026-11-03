@@ -232,16 +232,15 @@
           <p class="kicker">Quote / restock</p>
           <h2 id="quote-h">Request a quote or set up auto-restock</h2>
           <p class="small">Fields marked <span class="req" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required. At least one of phone or email is required.</p>
-          <form id="supplies-quote-form" class="form" action="https://formsubmit.co/info@peakandpillar.ca" method="POST" aria-labelledby="quote-h">
-            <input type="hidden" name="_subject" value="New Peak &amp; Pillar supplies quote / restock request">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://peakandpillar.ca/contact/thanks/">
-            <input type="hidden" name="_url" value="https://peakandpillar.ca/supplies/#supplies-quote">
+          <form id="supplies-quote-form" class="form" action="https://api.web3forms.com/submit" method="POST" aria-labelledby="quote-h">
+            <input type="hidden" name="access_key" value="">
+            <input type="hidden" name="subject" value="New Peak &amp; Pillar supplies quote / restock request">
+            <input type="hidden" name="from_name" value="Peak &amp; Pillar website">
+            <input type="hidden" name="redirect" value="https://peakandpillar.ca/contact/thanks/">
             <div class="hp" aria-hidden="true">
-              <label for="sq-honey">Leave this field empty</label>
-              <input type="text" id="sq-honey" name="_honey" tabindex="-1" autocomplete="off">
+              <label><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"> Leave unchecked</label>
             </div>
+
 
             <div class="field-row">
               <div class="field">
@@ -329,16 +328,15 @@
           <p class="kicker">Source an item</p>
           <h2 id="item-h">Can&rsquo;t find it? Request an item</h2>
           <p class="small">Describe what you need. We source it and send you a quote. Fields marked <span class="req" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
-          <form id="request-item-form" class="form" action="https://formsubmit.co/info@peakandpillar.ca" method="POST" aria-labelledby="item-h">
-            <input type="hidden" name="_subject" value="New Peak &amp; Pillar item request">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://peakandpillar.ca/contact/thanks/">
-            <input type="hidden" name="_url" value="https://peakandpillar.ca/supplies/#request-item">
+          <form id="request-item-form" class="form" action="https://api.web3forms.com/submit" method="POST" aria-labelledby="item-h">
+            <input type="hidden" name="access_key" value="">
+            <input type="hidden" name="subject" value="New Peak &amp; Pillar item request">
+            <input type="hidden" name="from_name" value="Peak &amp; Pillar website">
+            <input type="hidden" name="redirect" value="https://peakandpillar.ca/contact/thanks/">
             <div class="hp" aria-hidden="true">
-              <label for="ri-honey">Leave this field empty</label>
-              <input type="text" id="ri-honey" name="_honey" tabindex="-1" autocomplete="off">
+              <label><input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"> Leave unchecked</label>
             </div>
+
 
             <div class="field">
               <label for="ri-item">Item description <span class="req" aria-hidden="true">*</span></label>
@@ -440,24 +438,6 @@
     <p class="small">&copy; 2026 Peak &amp; Pillar. Prices in CAD, plus HST.</p>
   </div>
 </footer>
-<script>
-(function(){
-  function wire(formId, phoneName, emailName, reachId, errId){
-    var f = document.getElementById(formId); if(!f) return;
-    var p = f.elements[phoneName], m = f.elements[emailName];
-    var g = document.getElementById(reachId), err = document.getElementById(errId);
-    var b = f.querySelector("[type=submit]");
-    function ok(){ return p.value.trim() !== "" || m.value.trim() !== ""; }
-    function clear(){ if(ok()){ err.hidden = true; g.classList.remove("invalid"); p.removeAttribute("aria-invalid"); m.removeAttribute("aria-invalid"); } }
-    p.addEventListener("input", clear); m.addEventListener("input", clear);
-    f.addEventListener("submit", function(e){
-      if(!ok()){ e.preventDefault(); err.hidden = false; g.classList.add("invalid"); p.setAttribute("aria-invalid","true"); m.setAttribute("aria-invalid","true"); p.focus(); return; }
-      b.disabled = true; b.textContent = "Sending…";
-    });
-  }
-  wire("supplies-quote-form", "phone", "email", "sq-reach", "sq-reach-error");
-  wire("request-item-form", "phone", "email", "ri-reach", "ri-reach-error");
-})();
-</script>
+<script src="../assets/forms.js" defer></script>
 </body>
 </html>
