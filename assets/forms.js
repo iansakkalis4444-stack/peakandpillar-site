@@ -150,6 +150,16 @@
     };
   }
 
+  function trackLead(formName, next) {
+    var done = false;
+    function go() { if (!done) { done = true; next(); } }
+    if (typeof gtag !== "function") { go(); return; }
+    try {
+      gtag("event", "generate_lead", { form_name: formName, event_callback: go, event_timeout: 800 });
+    } catch (err) { /* ignore */ }
+    setTimeout(go, 800);
+  }
+
   function wireForm(opts) {
     var form = document.getElementById(opts.formId);
     if (!form) return;
@@ -196,7 +206,7 @@
           var okHttp = pack.res && pack.res.ok;
           var okJson = pack.json && pack.json.success === true;
           if (okHttp && okJson) {
-            window.location.href = THANKS;
+            trackLead(opts.formName, function () { window.location.href = THANKS; });
             return;
           }
           showFallback(form, subject);
@@ -214,6 +224,7 @@
     setAccessKeys();
     wireForm({
       formId: "inquiry",
+      formName: "contact",
       phoneName: "phone",
       emailName: "email",
       reachId: "reach",
@@ -221,6 +232,7 @@
     });
     wireForm({
       formId: "supplies-quote-form",
+      formName: "supplies_quote",
       phoneName: "phone",
       emailName: "email",
       reachId: "sq-reach",
@@ -228,6 +240,7 @@
     });
     wireForm({
       formId: "request-item-form",
+      formName: "request_item",
       phoneName: "phone",
       emailName: "email",
       reachId: "ri-reach",
