@@ -479,7 +479,7 @@ nav a:hover::after,nav a[aria-current="page"]::after{transform:scaleX(1)}
 /* ===================== v4: Supplies ===================== */
 nav a{white-space:nowrap}
 .nav-new{display:inline-block;margin-left:.35rem;padding:.12rem .45rem;border-radius:999px;background:var(--green);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;vertical-align:0.15em;line-height:1.2}
-.supplies-callout{padding:0;margin:-1.5rem 0 0}
+.supplies-callout{position:relative;z-index:1;padding:0;margin:2rem 0 0}
 .supplies-callout-inner{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:14px;padding:1rem 1.35rem;box-shadow:var(--shadow-sm)}
 .supplies-callout-inner p{margin:0;color:var(--charcoal);font-size:1rem}
 .supplies-callout-inner a{display:inline-flex;align-items:center;gap:.25rem;color:var(--green);font-weight:600;text-decoration:none;white-space:nowrap}
@@ -523,7 +523,7 @@ nav a{white-space:nowrap}
 @media (max-width:960px){
   .product-grid{grid-template-columns:repeat(2,1fr)}
   .supplies-forms{grid-template-columns:1fr}
-  .supplies-callout{margin-top:0}
+  .supplies-callout{margin-top:1.5rem}
 }
 @media (max-width:600px){
   .product-grid{grid-template-columns:1fr}
